@@ -1,13 +1,18 @@
-# Antibiotic Resistance Trend Predictor (India)
+# Antibiotic Resistance Trend Predictor 
 
-**Author:** Sariga
+**Author:** Sariga Joseph Fredy    
+
 **Course:** Data Science, B.Tech Computer Science and Engineering, Mar Baselios College of Engineering and Technology
-**Part covered in this README:** Steps 1 and 2 of structured thinking (Problem Identification and Data Collection)
-**Course outcome:** CO1 (explain the fundamental concepts in data science), with data acquisition also supporting CO3
+
+
+
+**Part covered in this README:** Steps 1 and 2 of structured thinking -Problem Identification and Data Collection  
+
+**Course outcome:** CO1 -explain the fundamental concepts in data science
 
 ---
 
-## 1. Project in one paragraph
+## 1. Introduction
 
 Antibiotic resistance is a growing healthcare problem. When bacteria stop responding to a drug, infections become harder to treat, and these changes are often noticed only after the drug has already stopped working. This project uses Indian surveillance data to find bacteria-antibiotic combinations where susceptibility is falling while the drug still works, forecasts their direction, and shows them in an early-warning dashboard.
 
@@ -32,14 +37,6 @@ Antibiotic resistance makes common infections harder to treat, and changes in re
 ### Expected outcome
 
 An early-warning table that gives, for each bacteria-antibiotic pair, the trend (change per year), a forecast for 2025, and a risk label, shown with charts on a Streamlit dashboard.
-
-### Type of problem
-
-| Question | Answer |
-|---|---|
-| What kind of problem is it? | Trend forecasting (regression over time) plus a rule-based risk classification |
-| What is being predicted? | Percentage of bacteria that are susceptible to a drug in a future year |
-| Why a simple model? | Only about 8 yearly data points exist per pair, so a straight-line model is easier to justify and explain than a complex one |
 
 ### Data science concepts used
 
@@ -77,7 +74,7 @@ The result code is `remarks`: 1 = Susceptible, 2 = Intermediate, 3 = Resistant. 
 
 The `amr-tracker` project on GitHub (by Yashita Thakur) extracts the national trend tables from the ICMR-AMRSN annual reports into a CSV file. Each row holds an organism, an antibiotic, a year, the number tested, the number susceptible, and the percentage susceptible. Six organisms are covered: *E. coli*, *K. pneumoniae*, *A. baumannii*, *P. aeruginosa*, *S. aureus* and MRSA.
 
-This is an unofficial extraction of the original reports. The original ICMR annual reports are the authoritative source and should be cited along with the project.
+This is an unofficial extraction of the original reports. The original ICMR annual reports are the authoritative source.
 
 ### Structured and unstructured data
 
@@ -113,7 +110,7 @@ This is an unofficial extraction of the original reports. The original ICMR annu
 | `clean_results.csv` | Cleaned patient-level results from the ICMR sample |
 | `clean_trends.csv` | Cleaned yearly trend data, one row per organism, antibiotic and year |
 | `alerts.csv` | Early-warning table with trend, 2025 forecast and risk label |
-| `app.py` | Streamlit dashboard (to be run later) |
+| `app.py` | Streamlit dashboard |
 
 ---
 
