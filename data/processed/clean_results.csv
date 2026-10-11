@@ -1,0 +1,130 @@
+sample_id,organism,antibiotic,remarks,collection_date,month,is_resistant
+519724,Klebsiella pneumoniae,Amikacin,1.0,2023-02-24,2023-02,0
+519724,Klebsiella pneumoniae,Cefotaxime,2.0,2023-02-24,2023-02,0
+519724,Klebsiella pneumoniae,Ceftazidime,1.0,2023-02-24,2023-02,0
+519724,Klebsiella pneumoniae,Ceftriaxone,1.0,2023-02-24,2023-02,0
+519724,Klebsiella pneumoniae,Ciprofloxacin,1.0,2023-02-24,2023-02,0
+519724,Klebsiella pneumoniae,Imipenem,1.0,2023-02-24,2023-02,0
+519724,Klebsiella pneumoniae,Meropenem,1.0,2023-02-24,2023-02,0
+519724,Klebsiella pneumoniae,Piperacillin-tazobactam,1.0,2023-02-24,2023-02,0
+520597,Enterobacter cloacae ,Amikacin,1.0,2023-03-17,2023-03,0
+520597,Enterobacter cloacae ,Cefotaxime,3.0,2023-03-17,2023-03,1
+520597,Enterobacter cloacae ,Ceftazidime,3.0,2023-03-17,2023-03,1
+520597,Enterobacter cloacae ,Ceftriaxone,3.0,2023-03-17,2023-03,1
+520597,Enterobacter cloacae ,Ciprofloxacin,3.0,2023-03-17,2023-03,1
+520597,Enterobacter cloacae ,Ertapenem,3.0,2023-03-17,2023-03,1
+520597,Enterobacter cloacae ,Imipenem,3.0,2023-03-17,2023-03,1
+520597,Enterobacter cloacae ,Meropenem,3.0,2023-03-17,2023-03,1
+520597,Enterobacter cloacae ,Piperacillin-tazobactam,3.0,2023-03-17,2023-03,1
+536921,Escherichia coli,Amikacin,1.0,2023-06-20,2023-06,0
+536921,Escherichia coli,Cefotaxime,3.0,2023-06-20,2023-06,1
+536921,Escherichia coli,Ceftriaxone,3.0,2023-06-20,2023-06,1
+536921,Escherichia coli,Ciprofloxacin,3.0,2023-06-20,2023-06,1
+536921,Escherichia coli,Imipenem,3.0,2023-06-20,2023-06,1
+536921,Escherichia coli,Meropenem,3.0,2023-06-20,2023-06,1
+536921,Escherichia coli,Piperacillin-tazobactam,3.0,2023-06-20,2023-06,1
+538192,Klebsiella pneumoniae,Amikacin,2.0,2023-07-01,2023-07,0
+538192,Klebsiella pneumoniae,Cefotaxime,3.0,2023-07-01,2023-07,1
+538192,Klebsiella pneumoniae,Ceftazidime,3.0,2023-07-01,2023-07,1
+538192,Klebsiella pneumoniae,Ceftriaxone,3.0,2023-07-01,2023-07,1
+538192,Klebsiella pneumoniae,Ciprofloxacin,3.0,2023-07-01,2023-07,1
+538192,Klebsiella pneumoniae,Imipenem,3.0,2023-07-01,2023-07,1
+538192,Klebsiella pneumoniae,Meropenem,3.0,2023-07-01,2023-07,1
+538192,Klebsiella pneumoniae,Piperacillin-tazobactam,3.0,2023-07-01,2023-07,1
+539643,Acinetobacter baumannii ,Amikacin,3.0,2023-06-23,2023-06,1
+539643,Acinetobacter baumannii ,Cefepime,3.0,2023-06-23,2023-06,1
+539643,Acinetobacter baumannii ,Ceftazidime,3.0,2023-06-23,2023-06,1
+539643,Acinetobacter baumannii ,Imipenem,3.0,2023-06-23,2023-06,1
+539643,Acinetobacter baumannii ,Levofloxacin,3.0,2023-06-23,2023-06,1
+539643,Acinetobacter baumannii ,Meropenem,3.0,2023-06-23,2023-06,1
+539643,Acinetobacter baumannii ,Minocycline,1.0,2023-06-23,2023-06,0
+539643,Acinetobacter baumannii ,Piperacillin-tazobactam,3.0,2023-06-23,2023-06,1
+539645,Pseudomonas aeruginosa,Cefepime,1.0,2023-06-28,2023-06,0
+539645,Pseudomonas aeruginosa,Ceftazidime,1.0,2023-06-28,2023-06,0
+539645,Pseudomonas aeruginosa,Ciprofloxacin,1.0,2023-06-28,2023-06,0
+539645,Pseudomonas aeruginosa,Imipenem,1.0,2023-06-28,2023-06,0
+539645,Pseudomonas aeruginosa,Levofloxacin,1.0,2023-06-28,2023-06,0
+539645,Pseudomonas aeruginosa,Meropenem,1.0,2023-06-28,2023-06,0
+539645,Pseudomonas aeruginosa,Piperacillin-tazobactam,1.0,2023-06-28,2023-06,0
+539645,Pseudomonas aeruginosa,Tobramycin,1.0,2023-06-28,2023-06,0
+566587,Pseudomonas aeruginosa,Amikacin,1.0,2023-07-05,2023-07,0
+566587,Pseudomonas aeruginosa,Ceftazidime,1.0,2023-07-05,2023-07,0
+566587,Pseudomonas aeruginosa,Ciprofloxacin,2.0,2023-07-05,2023-07,0
+566587,Pseudomonas aeruginosa,Gentamicin,1.0,2023-07-05,2023-07,0
+566587,Pseudomonas aeruginosa,Imipenem,1.0,2023-07-05,2023-07,0
+566587,Pseudomonas aeruginosa,Levofloxacin,2.0,2023-07-05,2023-07,0
+566587,Pseudomonas aeruginosa,Meropenem,1.0,2023-07-05,2023-07,0
+566587,Pseudomonas aeruginosa,Piperacillin-tazobactam,1.0,2023-07-05,2023-07,0
+566587,Pseudomonas aeruginosa,Tobramycin,1.0,2023-07-05,2023-07,0
+568935,Acinetobacter baumannii ,Amikacin,3.0,2023-08-28,2023-08,1
+568935,Acinetobacter baumannii ,Cefepime,3.0,2023-08-28,2023-08,1
+568935,Acinetobacter baumannii ,Ceftazidime,3.0,2023-08-28,2023-08,1
+568935,Acinetobacter baumannii ,Colistin,2.0,2023-08-28,2023-08,0
+568935,Acinetobacter baumannii ,Imipenem,3.0,2023-08-28,2023-08,1
+568935,Acinetobacter baumannii ,Meropenem,3.0,2023-08-28,2023-08,1
+568935,Acinetobacter baumannii ,Piperacillin-tazobactam,3.0,2023-08-28,2023-08,1
+571738,Escherichia coli,Amikacin,3.0,2023-08-17,2023-08,1
+571738,Escherichia coli,Cefotaxime,3.0,2023-08-17,2023-08,1
+571738,Escherichia coli,Ciprofloxacin,3.0,2023-08-17,2023-08,1
+571738,Escherichia coli,Colistin,2.0,2023-08-17,2023-08,0
+571738,Escherichia coli,Ertapenem,3.0,2023-08-17,2023-08,1
+571738,Escherichia coli,Imipenem,3.0,2023-08-17,2023-08,1
+571738,Escherichia coli,Meropenem,3.0,2023-08-17,2023-08,1
+571738,Escherichia coli,Piperacillin-tazobactam,3.0,2023-08-17,2023-08,1
+571748,Escherichia coli,Amikacin,3.0,2023-08-21,2023-08,1
+571748,Escherichia coli,Cefotaxime,3.0,2023-08-21,2023-08,1
+571748,Escherichia coli,Ciprofloxacin,3.0,2023-08-21,2023-08,1
+571748,Escherichia coli,Colistin,2.0,2023-08-21,2023-08,0
+571748,Escherichia coli,Ertapenem,3.0,2023-08-21,2023-08,1
+571748,Escherichia coli,Imipenem,3.0,2023-08-21,2023-08,1
+571748,Escherichia coli,Meropenem,3.0,2023-08-21,2023-08,1
+571748,Escherichia coli,Piperacillin-tazobactam,3.0,2023-08-21,2023-08,1
+571748,Klebsiella pneumoniae,Amikacin,3.0,2023-08-21,2023-08,1
+571748,Klebsiella pneumoniae,Cefotaxime,3.0,2023-08-21,2023-08,1
+571748,Klebsiella pneumoniae,Ciprofloxacin,3.0,2023-08-21,2023-08,1
+571748,Klebsiella pneumoniae,Colistin,2.0,2023-08-21,2023-08,0
+571748,Klebsiella pneumoniae,Imipenem,3.0,2023-08-21,2023-08,1
+571748,Klebsiella pneumoniae,Meropenem,3.0,2023-08-21,2023-08,1
+571748,Klebsiella pneumoniae,Piperacillin-tazobactam,3.0,2023-08-21,2023-08,1
+580725,Escherichia coli,Amikacin,1.0,2023-10-17,2023-10,0
+580725,Escherichia coli,Cefotaxime,1.0,2023-10-17,2023-10,0
+580725,Escherichia coli,Ceftriaxone,1.0,2023-10-17,2023-10,0
+580725,Escherichia coli,Ciprofloxacin,1.0,2023-10-17,2023-10,0
+580725,Escherichia coli,Imipenem,1.0,2023-10-17,2023-10,0
+580725,Escherichia coli,Meropenem,1.0,2023-10-17,2023-10,0
+580725,Escherichia coli,Nitrofurantoin,1.0,2023-10-17,2023-10,0
+580725,Escherichia coli,Piperacillin-tazobactam,1.0,2023-10-17,2023-10,0
+581846,Klebsiella pneumoniae,Amikacin,1.0,2023-10-30,2023-10,0
+581846,Klebsiella pneumoniae,Cefotaxime,1.0,2023-10-30,2023-10,0
+581846,Klebsiella pneumoniae,Ceftriaxone,1.0,2023-10-30,2023-10,0
+581846,Klebsiella pneumoniae,Ciprofloxacin,1.0,2023-10-30,2023-10,0
+581846,Klebsiella pneumoniae,Imipenem,1.0,2023-10-30,2023-10,0
+581846,Klebsiella pneumoniae,Meropenem,1.0,2023-10-30,2023-10,0
+581846,Klebsiella pneumoniae,Piperacillin-tazobactam,1.0,2023-10-30,2023-10,0
+586234,Staphylococcus aureus,Cefoxitin,1.0,2023-11-16,2023-11,0
+586234,Staphylococcus aureus,Ciprofloxacin,1.0,2023-11-16,2023-11,0
+586234,Staphylococcus aureus,Clindamycin,1.0,2023-11-16,2023-11,0
+586234,Staphylococcus aureus,Erythromycin,1.0,2023-11-16,2023-11,0
+586234,Staphylococcus aureus,Linezolid,1.0,2023-11-16,2023-11,0
+586234,Staphylococcus aureus,Tetracycline,1.0,2023-11-16,2023-11,0
+586234,Staphylococcus aureus,Trimethoprim-sulfamethoxazole,1.0,2023-11-16,2023-11,0
+586234,Staphylococcus aureus,Vancomycin,1.0,2023-11-16,2023-11,0
+593721,Burkholderia cepacia complex,Ceftazidime,1.0,2023-11-17,2023-11,0
+593721,Burkholderia cepacia complex,Levofloxacin,1.0,2023-11-17,2023-11,0
+593721,Burkholderia cepacia complex,Meropenem,1.0,2023-11-17,2023-11,0
+593721,Burkholderia cepacia complex,Minocycline,1.0,2023-11-17,2023-11,0
+593721,Burkholderia cepacia complex,Trimethoprim-sulfamethoxazole,1.0,2023-11-17,2023-11,0
+600711,Klebsiella pneumoniae,Amikacin,1.0,2023-12-26,2023-12,0
+600711,Klebsiella pneumoniae,Cefotaxime,1.0,2023-12-26,2023-12,0
+600711,Klebsiella pneumoniae,Ceftriaxone,1.0,2023-12-26,2023-12,0
+600711,Klebsiella pneumoniae,Ciprofloxacin,3.0,2023-12-26,2023-12,1
+600711,Klebsiella pneumoniae,Imipenem,1.0,2023-12-26,2023-12,0
+600711,Klebsiella pneumoniae,Meropenem,1.0,2023-12-26,2023-12,0
+600711,Klebsiella pneumoniae,Piperacillin-tazobactam,1.0,2023-12-26,2023-12,0
+600818,Klebsiella pneumoniae,Amikacin,2.0,2023-12-28,2023-12,0
+600818,Klebsiella pneumoniae,Cefotaxime,1.0,2023-12-28,2023-12,0
+600818,Klebsiella pneumoniae,Ceftriaxone,1.0,2023-12-28,2023-12,0
+600818,Klebsiella pneumoniae,Ciprofloxacin,1.0,2023-12-28,2023-12,0
+600818,Klebsiella pneumoniae,Imipenem,1.0,2023-12-28,2023-12,0
+600818,Klebsiella pneumoniae,Meropenem,1.0,2023-12-28,2023-12,0
+600818,Klebsiella pneumoniae,Piperacillin-tazobactam,1.0,2023-12-28,2023-12,0

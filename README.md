@@ -107,6 +107,8 @@ This is an unofficial extraction of the original reports. The original ICMR annu
 | File | What it is |
 |---|---|
 | `README.md` | This document |
+| `notebooks/amr_analysis.ipynb` | Analysis notebook covering CO1 to CO3 (setup, cleaning, EDA, descriptive statistics, trend data cleaning). Run it from top to bottom with Restart and Run All |
+| `notebooks/amr_analysis_full_backup.ipynb` | Earlier version of the notebook, kept as a backup (includes the forecasting and early-warning work) |
 | `clean_results.csv` | Cleaned patient-level results from the ICMR sample |
 | `clean_trends.csv` | Cleaned yearly trend data, one row per organism, antibiotic and year |
 | `alerts.csv` | Early-warning table with trend, 2025 forecast and risk label |
@@ -123,5 +125,7 @@ This is an unofficial extraction of the original reports. The original ICMR annu
 ---
 
 ## 7. What comes next
+
+The notebook now covers CO1 to CO3. Forecasting, the early-warning table and the dashboard (CO4, CO5) will be added next.
 
 Step 3 (Data cleaning and preparation), Step 4 (Exploratory data analysis), and the remaining steps (features, model building, evaluation, communication) will be documented in the next parts of this README.
