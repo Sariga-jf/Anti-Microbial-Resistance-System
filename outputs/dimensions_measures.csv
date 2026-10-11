@@ -1,0 +1,10 @@
+Field,Role,Data type,Meaning
+organism,Dimension,Categorical (nominal),Which bacterium was tested
+antibiotic,Dimension,Categorical (nominal),Which drug it was tested against
+year,Dimension,Ordered (temporal),"Report year, 2017 to 2024"
+gram (derived),Dimension,Categorical,Gram-positive or Gram-negative group
+tested_n,Measure,Quantitative,Number of isolates tested
+susceptible_n,Measure,Quantitative,Number of isolates that were susceptible
+susceptible_pct,Measure,Quantitative,susceptible_n / tested_n x 100
+resistant_pct (derived),Measure,Quantitative,100 - susceptible_pct (main measure in this unit)
+change_per_year (derived),Measure,Quantitative,Slope of resistant_pct against year

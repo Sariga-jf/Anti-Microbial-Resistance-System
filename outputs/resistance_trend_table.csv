@@ -1,0 +1,59 @@
+Organism,Antibiotic,First year %,Latest %,Change per year (pts),Tested (latest)
+A. baumannii,amikacin,80.7,84.2,0.8,10351
+A. baumannii,cefepime,88.8,91.1,0.38,9741
+A. baumannii,ceftazidime,88.9,89.6,0.47,10351
+A. baumannii,imipenem,85.0,91.6,1.11,9852
+A. baumannii,levofloxacin,70.9,87.8,2.15,6809
+A. baumannii,meropenem,81.3,91.0,1.67,10304
+A. baumannii,minocycline,32.9,29.8,-0.66,8368
+A. baumannii,piperacillin-tazobactam,84.8,88.3,0.63,9852
+E. coli,amikacin,20.8,27.5,1.34,12445
+E. coli,cefotaxime,84.7,84.1,-0.1,10279
+E. coli,ceftazidime,76.5,72.5,-0.03,4500
+E. coli,ciprofloxacin,80.8,89.4,1.63,12361
+E. coli,ertapenem,32.6,38.4,1.19,10484
+E. coli,imipenem,18.6,42.4,2.58,11662
+E. coli,levofloxacin,84.3,84.2,0.2,4269
+E. coli,meropenem,26.8,37.1,1.35,12061
+E. coli,piperacillin-tazobactam,43.2,58.7,2.76,11679
+K. pneumoniae,amikacin,51.1,60.1,1.88,12517
+K. pneumoniae,cefotaxime,78.2,79.7,0.39,10032
+K. pneumoniae,ceftazidime,72.4,76.3,1.08,5404
+K. pneumoniae,ciprofloxacin,68.0,79.6,2.68,12271
+K. pneumoniae,ertapenem,54.6,63.2,1.68,10212
+K. pneumoniae,imipenem,41.5,68.8,3.38,11641
+K. pneumoniae,levofloxacin,71.7,75.2,1.31,5113
+K. pneumoniae,meropenem,51.9,64.9,2.1,12189
+K. pneumoniae,piperacillin-tazobactam,57.4,74.0,2.81,11650
+MRSA,cefoxitin,100.0,100.0,-0.23,2505
+MRSA,ciprofloxacin,90.4,88.9,-0.26,4104
+MRSA,clindamycin,40.8,35.4,-0.47,4132
+MRSA,cotrimoxazole,36.1,35.2,-0.85,4311
+MRSA,erythromycin,72.8,74.5,0.22,4153
+MRSA,linezolid,0.8,1.0,-0.02,4311
+MRSA,oxacillin,93.9,100.0,0.69,2908
+MRSA,teicoplanin,0.9,0.0,-0.33,1626
+MRSA,tetracycline,17.6,13.8,0.12,2321
+MRSA,tigecycline,0.0,0.0,0.4,1540
+MRSA,vancomycin,0.0,0.0,0.07,4072
+P. aeruginosa,amikacin,31.1,26.7,-0.48,9578
+P. aeruginosa,cefepime,38.6,32.5,-0.51,10317
+P. aeruginosa,ceftazidime,34.6,35.8,0.51,11381
+P. aeruginosa,ciprofloxacin,42.2,43.0,0.94,11222
+P. aeruginosa,gentamicin,40.6,30.2,-1.06,3399
+P. aeruginosa,imipenem,26.4,43.1,1.66,10443
+P. aeruginosa,levofloxacin,39.5,46.0,1.32,8407
+P. aeruginosa,meropenem,31.3,38.0,0.8,10857
+P. aeruginosa,piperacillin-tazobactam,31.1,30.7,0.26,10443
+P. aeruginosa,tobramycin,32.3,31.5,0.15,4522
+S. aureus,cefoxitin,32.9,52.39,2.03,4690
+S. aureus,ciprofloxacin,76.7,81.67,0.07,8035
+S. aureus,clindamycin,22.6,27.32,0.66,8255
+S. aureus,cotrimoxazole,28.8,23.22,-1.35,7968
+S. aureus,erythromycin,50.5,64.14,1.46,8274
+S. aureus,linezolid,0.4,2.55,0.16,8159
+S. aureus,oxacillin,28.3,47.97,2.49,5910
+S. aureus,teicoplanin,0.5,0.0,-0.2,3377
+S. aureus,tetracycline,9.5,11.22,0.42,4241
+S. aureus,tigecycline,0.5,0.0,0.38,2846
+S. aureus,vancomycin,0.0,0.0,0.05,7968

@@ -127,3 +127,20 @@ This is an unofficial extraction of the original reports. The original ICMR annu
 The notebook now covers CO1 to CO3. Forecasting, the early-warning table and the dashboard (CO4, CO5) will be added next.
 
 Step 3 (Data cleaning and preparation), Step 4 (Exploratory data analysis), and the remaining steps (features, model building, evaluation, communication) will be documented in the next parts of this README.
+
+
+---
+
+## 8. Data visualization
+
+Charts for the data visualization unit, based on **% resistant** (100 minus % susceptible, so it also includes intermediate results). Topics: introduction to data visualization, introduction to dimensions and measures, bar chart, line chart, table, heat map, treemap, packed bubble, tooltip and violin plot.
+
+| File | What it is |
+|---|---|
+| `docs/visualization_notes.md` | Introduction, dimensions and measures, and notes and findings for each chart |
+| `notebooks/amr_visualization.ipynb` | Notebook that draws every chart (Restart and Run All) |
+| `src/viz_utils.py` | Data loading, own treemap layout, own circle packing, tooltip HTML writer |
+| `src/charts.py` | One function per chart |
+| `src/make_charts.py` | Regenerates everything in `outputs/charts/` (about 5 seconds) |
+| `outputs/charts/` | 12 PNG charts and the interactive tooltip chart `11_tooltip_interactive.html` |
+| `outputs/dimensions_measures.csv`, `outputs/resistance_trend_table.csv` | Field roles, and the resistance trend for each pair |
