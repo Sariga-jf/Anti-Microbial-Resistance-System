@@ -1,4 +1,4 @@
-"""One function per chart (all based on % resistant = 100 - % susceptible).
+"""One function per chart (all based on Resistance (%) = 100 - % susceptible).
 Each returns a matplotlib Figure so the notebook and make_charts.py share the same code."""
 import matplotlib
 import matplotlib.pyplot as plt
@@ -7,10 +7,14 @@ import pandas as pd
 import seaborn as sns
 from matplotlib import cm, colors
 
-import viz_utils as vu
+try:
+    from . import viz_utils as vu   # when imported as part of the Streamlit app (src package)
+except ImportError:
+    import viz_utils as vu           # when run as a script: python src/make_charts.py
 
 RES_CMAP = "YlOrRd"   # sequential: pale yellow = low resistance, dark red = high resistance
 ORG_COLORS = dict(zip(vu.SHORT.values(), ["#1f77b4", "#d62728", "#2ca02c", "#ff7f0e", "#9467bd", "#8c564b"]))
+ORG_COLORS = __import__("collections").defaultdict(lambda: "#7f7f7f", ORG_COLORS)  # unknown organisms get grey
 ABBR = {"piperacillin-tazobactam": "pip-tazo", "ciprofloxacin": "cipro", "cotrimoxazole": "cotrimox.",
         "erythromycin": "erythro.", "levofloxacin": "levoflox.", "ceftazidime": "ceftaz.", "clindamycin": "clinda."}
 
@@ -67,7 +71,7 @@ def fig_bar_highest_resistance(trends, year=2024, n=12):
     bars = ax.barh(d["pair"], d["resistant_pct"], color=[ORG_COLORS[o] for o in d["organism_short"]])
     for b, v in zip(bars, d["resistant_pct"]):
         ax.text(v + 0.5, b.get_y() + b.get_height() / 2, f"{v:.1f}%", va="center", fontsize=9)
-    ax.set_xlabel("% resistant")
+    ax.set_xlabel("Resistance (%)")
     ax.set_xlim(0, 112)
     ax.set_title(f"Bar chart: {n} organism-antibiotic pairs with the highest resistance, {year}")
     present = [o for o in ORG_COLORS if o in d["organism_short"].values]
@@ -79,7 +83,7 @@ def fig_bar_highest_resistance(trends, year=2024, n=12):
 
 
 def fig_bar_by_organism(trends, year=2024):
-    """Mean % resistant per organism, weighted by isolates tested."""
+    """Mean Resistance (%) per organism, weighted by isolates tested."""
     d = _year(trends, year)
     m = d.groupby("organism_short").apply(lambda g: np.average(g["resistant_pct"], weights=g["tested_n"]), include_groups=False)
     m = m.sort_values()
@@ -88,7 +92,7 @@ def fig_bar_by_organism(trends, year=2024):
     for b, v in zip(bars, m.values):
         ax.text(v + 0.8, b.get_y() + b.get_height() / 2, f"{v:.1f}%", va="center", fontsize=9)
     ax.set_xlim(0, 100)
-    ax.set_xlabel("% resistant (weighted by isolates tested)")
+    ax.set_xlabel("Resistance (%), weighted by isolates tested")
     ax.set_title(f"Bar chart: average resistance by organism, {year}")
     ax.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()
@@ -105,7 +109,7 @@ def fig_line_pair(trends, organism="Klebsiella pneumoniae", antibiotics=("merope
         ax.annotate(f"{g['resistant_pct'].iloc[-1]:.0f}%", (g["year"].iloc[-1], g["resistant_pct"].iloc[-1]),
                     textcoords="offset points", xytext=(6, -3), fontsize=9)
     ax.set_xlabel("Year")
-    ax.set_ylabel("% resistant")
+    ax.set_ylabel("Resistance (%)")
     ax.set_title(f"Line chart: {vu.SHORT.get(organism, organism)} resistance over time")
     ax.legend(frameon=False)
     ax.grid(alpha=.3)
@@ -121,7 +125,7 @@ def fig_line_organisms(trends, antibiotic="meropenem"):
         g = g.sort_values("year")
         ax.plot(g["year"], g["resistant_pct"], marker="o", color=ORG_COLORS[o], label=o)
     ax.set_xlabel("Year")
-    ax.set_ylabel("% resistant")
+    ax.set_ylabel("Resistance (%)")
     ax.set_title(f"Line chart: {antibiotic} resistance by organism")
     ax.legend(frameon=False)
     ax.grid(alpha=.3)
@@ -144,7 +148,7 @@ def risk_table(trends, min_years=6):
 
 def fig_table_rising(trends, n=10):
     t = risk_table(trends)
-    t = t[t["Latest %"] <= 50].nlargest(n, "Change per year (pts)").round(1)   # not yet above 50% resistant, but rising fastest
+    t = t[t["Latest %"] <= 50].nlargest(n, "Change per year (pts)").round(1)   # not yet above 50Resistance (%), but rising fastest
     fig, ax = plt.subplots(figsize=(10, 4.2))
     ax.axis("off")
     tb = ax.table(cellText=t.values, colLabels=t.columns, loc="center", cellLoc="center")
@@ -157,7 +161,7 @@ def fig_table_rising(trends, n=10):
             cell.set_text_props(color="white", weight="bold")
         elif cidx == 4:
             cell.set_facecolor("#f8d7d7")
-    ax.set_title(f"Table: {n} pairs at or below 50% resistant in 2024 whose resistance is rising fastest", pad=10)
+    ax.set_title(f"Table: {n} pairs at or below 50Resistance (%) in 2024 whose resistance is rising fastest", pad=10)
     fig.tight_layout()
     return fig
 
@@ -177,8 +181,8 @@ def fig_heatmap(trends, year=2024):
                 ax.text(j, i, "-", ha="center", va="center", color="#999")
             else:
                 ax.text(j, i, f"{v:.0f}", ha="center", va="center", fontsize=8, color="white" if v > 65 else "black")
-    fig.colorbar(im, ax=ax, label="% resistant", shrink=0.7)
-    ax.set_title(f"Heat map: % resistant, antibiotic x organism, {year}\n(blank = not reported)")
+    fig.colorbar(im, ax=ax, label="Resistance (%)", shrink=0.7)
+    ax.set_title(f"Heat map: Resistance (%), antibiotic x organism, {year}\n(blank = not reported)")
     fig.tight_layout()
     return fig
 
@@ -195,7 +199,7 @@ def fig_heatmap_years(trends, organism="Klebsiella pneumoniae"):
             v = d.values[i, j]
             if not np.isnan(v):
                 ax.text(j, i, f"{v:.0f}", ha="center", va="center", fontsize=8, color="white" if v > 65 else "black")
-    fig.colorbar(im, ax=ax, label="% resistant", shrink=0.8)
+    fig.colorbar(im, ax=ax, label="Resistance (%)", shrink=0.8)
     ax.set_title(f"Heat map over time: {vu.SHORT.get(organism, organism)}, antibiotic x year")
     fig.tight_layout()
     return fig
@@ -203,7 +207,7 @@ def fig_heatmap_years(trends, organism="Klebsiella pneumoniae"):
 
 # 6. Treemap ----------------------------------------------------------------------
 def fig_treemap(trends, year=2024, top_per_org=6):
-    """Hierarchy: Gram group > organism > antibiotic. Area = isolates tested, colour = % resistant."""
+    """Hierarchy: Gram group > organism > antibiotic. Area = isolates tested, colour = Resistance (%)."""
     d = _year(trends, year).sort_values("tested_n", ascending=False).groupby("organism_short").head(top_per_org)
     fig, ax = plt.subplots(figsize=(12, 7.5))
     norm = colors.Normalize(0, 100)
@@ -228,8 +232,8 @@ def fig_treemap(trends, year=2024, top_per_org=6):
     ax.set_xlim(0, W)
     ax.set_ylim(H, 0)
     ax.axis("off")
-    fig.colorbar(cm.ScalarMappable(norm=norm, cmap=cmap), ax=ax, shrink=0.6, label="% resistant")
-    ax.set_title(f"Treemap: Gram group > organism > antibiotic, {year}\n(area = isolates tested, colour = % resistant; top {top_per_org} antibiotics per organism)")
+    fig.colorbar(cm.ScalarMappable(norm=norm, cmap=cmap), ax=ax, shrink=0.6, label="Resistance (%)")
+    ax.set_title(f"Treemap: Gram group > organism > antibiotic, {year}\n(area = isolates tested, colour = Resistance (%); top {top_per_org} antibiotics per organism)")
     fig.tight_layout()
     return fig
 
@@ -252,24 +256,24 @@ def fig_packed_bubbles(trends, year=2024, n=40):
     ax.set_ylim(-lim, lim)
     ax.set_aspect("equal")
     ax.axis("off")
-    fig.colorbar(cm.ScalarMappable(norm=colors.Normalize(0, 100), cmap=cmap), ax=ax, shrink=0.6, label="% resistant")
-    ax.set_title(f"Packed bubble chart: {n} most-tested pairs, {year}\n(bubble area = isolates tested, colour = % resistant)")
+    fig.colorbar(cm.ScalarMappable(norm=colors.Normalize(0, 100), cmap=cmap), ax=ax, shrink=0.6, label="Resistance (%)")
+    ax.set_title(f"Packed bubble chart: {n} most-tested pairs, {year}\n(bubble area = isolates tested, colour = Resistance (%))")
     fig.tight_layout()
     return fig
 
 
 # 8. Violin plot -------------------------------------------------------------------
 def fig_violin_organism(trends):
-    """Distribution of % resistant across all antibiotic-year values of each organism."""
+    """Distribution of Resistance (%) across all antibiotic-year values of each organism."""
     order = trends.groupby("organism_short")["resistant_pct"].median().sort_values().index
     fig, ax = plt.subplots(figsize=(10, 5.5))
     sns.violinplot(data=trends, x="organism_short", y="resistant_pct", order=order, hue="organism_short", palette=ORG_COLORS,
                    inner="quartile", cut=0, legend=False, ax=ax)
     sns.stripplot(data=trends, x="organism_short", y="resistant_pct", order=order, color="black", size=2, alpha=.35, ax=ax)
     ax.set_xlabel("")
-    ax.set_ylabel("% resistant")
+    ax.set_ylabel("Resistance (%)")
     ax.set_ylim(-3, 103)
-    ax.set_title("Violin plot: spread of % resistant per organism\n(each dot = one antibiotic in one year; lines inside = quartiles)")
+    ax.set_title("Violin plot: spread of Resistance (%) per organism\n(each dot = one antibiotic in one year; lines inside = quartiles)")
     ax.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()
     return fig
@@ -281,9 +285,9 @@ def fig_violin_year(trends):
     med = trends.groupby("year")["resistant_pct"].median()
     ax.plot(range(len(med)), med.values, color="#b2182b", marker="o", lw=1.5, label="median")
     ax.set_xlabel("Year")
-    ax.set_ylabel("% resistant")
+    ax.set_ylabel("Resistance (%)")
     ax.set_ylim(-3, 103)
-    ax.set_title("Violin plot: spread of % resistant across all pairs, by year")
+    ax.set_title("Violin plot: spread of Resistance (%) across all pairs, by year")
     ax.legend(frameon=False)
     ax.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()

@@ -115,9 +115,9 @@ def pack_circles(radii, seed=0, iterations=400):
 
 
 # ----------------------------------------------------------- tooltip chart
-def tooltip_html(trends, path):
+def tooltip_html_string(trends):
     """Writes a self-contained interactive HTML file (no libraries, works offline):
-    one line per organism for a chosen antibiotic (% resistant), with a hover tooltip."""
+    one line per organism for a chosen antibiotic (Resistance %), with a hover tooltip."""
     data = {}
     for ab, g in trends.groupby("antibiotic"):
         data[ab] = {}
@@ -125,8 +125,12 @@ def tooltip_html(trends, path):
             gg = gg.sort_values("year")
             data[ab][org] = [[int(r.year), float(r.resistant_pct), int(r.tested_n), int(r.tested_n - r.susceptible_n)]
                              for r in gg.itertuples()]
-    html = TOOLTIP_TEMPLATE.replace("__DATA__", json.dumps(data))
-    Path(path).write_text(html, encoding="utf-8")
+    return TOOLTIP_TEMPLATE.replace("__DATA__", json.dumps(data))
+
+
+def tooltip_html(trends, path):
+    """Write the tooltip chart to a standalone .html file."""
+    Path(path).write_text(tooltip_html_string(trends), encoding="utf-8")
 
 
 TOOLTIP_TEMPLATE = """<!DOCTYPE html>
@@ -139,7 +143,7 @@ font-size:13px;line-height:1.45;display:none;box-shadow:0 2px 8px rgba(0,0,0,.3)
 .legend span{display:inline-block;margin-right:14px;font-size:13px}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:-1px}
 </style></head><body>
-<h2>% resistant by year (ICMR-AMRSN, 2017-2024)</h2>
+<h2>Resistance (%) by year (ICMR-AMRSN, 2017-2024)</h2>
 <p>Pick an antibiotic, then hover over any point to see the organism, year, number tested and number not susceptible.</p>
 <label>Antibiotic: <select id="ab"></select></label>
 <div class="legend" id="legend" style="margin:10px 0"></div>
@@ -166,7 +170,7 @@ function draw(){
     const pts=d[o]; el("polyline",{points:pts.map(p=>x(p[0])+","+yy(p[1])).join(" "),fill:"none",stroke:COLORS[i%6],"stroke-width":2});
     pts.forEach(p=>{const c=el("circle",{cx:x(p[0]),cy:yy(p[1]),r:5,fill:COLORS[i%6],stroke:"#fff","stroke-width":1.5});
       c.addEventListener("mousemove",e=>{tip.style.display="block";tip.style.left=(e.clientX+14)+"px";tip.style.top=(e.clientY+14)+"px";
-        tip.innerHTML=`<b>${o}</b> - ${sel.value}<br>Year: ${p[0]}<br>Resistant: ${p[1].toFixed(1)}%<br>Tested: ${p[2].toLocaleString()}<br>Not susceptible isolates: ${p[3].toLocaleString()}`});
+        tip.innerHTML=`<b>${o}</b> - ${sel.value}<br>Year: ${p[0]}<br>Resistance: ${p[1].toFixed(1)}%<br>Tested: ${p[2].toLocaleString()}<br>Not susceptible isolates: ${p[3].toLocaleString()}`});
       c.addEventListener("mouseleave",()=>tip.style.display="none");});
   });
 }
