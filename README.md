@@ -114,24 +114,7 @@ This is an unofficial extraction of the original reports. The original ICMR annu
 
 ---
 
-## 6. Sources and citations
-
-- ICMR National Health Research Data Repository: Antimicrobial Resistance Surveillance Network sample dataset and AMR metadata.
-- ICMR-AMRSN Annual Reports, 2022 (6th), 2023 (7th) and 2024 (8th) editions.
-- `yashita-thakur/amr-tracker` on GitHub: structured extraction of the ICMR-AMRSN and NCDC NARS-Net annual reports (code under the MIT licence; see `DATA_LICENSE.md` in that repository for the data terms).
-
----
-
-## 7. What comes next
-
-The notebook now covers CO1 to CO3. Forecasting, the early-warning table and the dashboard (CO4, CO5) will be added next.
-
-Step 3 (Data cleaning and preparation), Step 4 (Exploratory data analysis), and the remaining steps (features, model building, evaluation, communication) will be documented in the next parts of this README.
-
-
----
-
-## 8. Data visualization
+## 6. Data visualization
 
 Charts for the data visualization unit, based on **% resistant** (100 minus % susceptible, so it also includes intermediate results). Topics: introduction to data visualization, introduction to dimensions and measures, bar chart, line chart, table, heat map, treemap, packed bubble, tooltip and violin plot.
 
@@ -139,6 +122,14 @@ Charts for the data visualization unit, based on **% resistant** (100 minus % su
 |---|---|
 | `docs/visualization_notes.md` | Introduction, dimensions and measures, and notes and findings for each chart |
 | `notebooks/amr_visualization.ipynb` | Notebook that draws every chart (Restart and Run All) |
+
+## 7. Sources and citations
+
+- ICMR National Health Research Data Repository: Antimicrobial Resistance Surveillance Network sample dataset and AMR metadata.
+- ICMR-AMRSN Annual Reports, 2022 (6th), 2023 (7th) and 2024 (8th) editions.
+- `yashita-thakur/amr-tracker` on GitHub: structured extraction of the ICMR-AMRSN and NCDC NARS-Net annual reports (code under the MIT licence; see `DATA_LICENSE.md` in that repository for the data terms).
+
+---
 | `src/viz_utils.py` | Data loading, own treemap layout, own circle packing, tooltip HTML writer |
 | `src/charts.py` | One function per chart |
 | `src/make_charts.py` | Regenerates everything in `outputs/charts/` (about 5 seconds) |
