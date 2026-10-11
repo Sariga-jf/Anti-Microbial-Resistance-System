@@ -1,6 +1,6 @@
 # Antibiotic Resistance Trend Predictor 
 
-**Author:** Sariga Joseph Fredy    
+**Author:** Sariga Joseph Fredy,S Sreya
 
 **Course:** Data Science, B.Tech Computer Science and Engineering, Mar Baselios College of Engineering and Technology
 
