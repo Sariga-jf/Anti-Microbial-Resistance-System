@@ -87,12 +87,6 @@ This is an unofficial extraction of the original reports. The original ICMR annu
 | Structured | IDs, dates, age, ward type, test results, yearly counts and percentages |
 | Unstructured (free text) | `clinical_diagnosis`, `comorbidity`, `devices_used`, `prescribed_antibiotic` (comma-separated text that has to be converted into 0/1 columns before analysis) |
 
-### Why these sources
-
-- They are real Indian surveillance data, not made-up data.
-- The yearly data covers 8 years, which makes trend analysis possible.
-- Patient-level data would be better, but the full version is not released, so the small sample is used for method practice only.
-
 ---
 
 ## 4. Limitations of the data
