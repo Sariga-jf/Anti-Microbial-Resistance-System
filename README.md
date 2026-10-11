@@ -8,7 +8,11 @@
 
 **Part covered in this README:** Steps 1 and 2 of structured thinking -Problem Identification and Data Collection  
 
-**Course outcome:** CO1 -explain the fundamental concepts in data science
+**Course outcome:** 
+
+CO1 -explain the fundamental concepts in data science
+CO2 - Statistical Analysis of data
+CO3 - EDA
 
 ---
 
