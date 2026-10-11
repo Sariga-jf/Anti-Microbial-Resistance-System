@@ -1,6 +1,6 @@
 # Antibiotic Resistance Trend Predictor 
 
-**Author:** Sariga Joseph Fredy,S Sreya
+**Author:** Sariga Joseph Fredy,S Sreya,Shalin Miya Babu
 
 **Course:** Data Science, B.Tech Computer Science and Engineering, Mar Baselios College of Engineering and Technology
 
@@ -13,6 +13,8 @@
 CO1 -explain the fundamental concepts in data science
 CO2 - Statistical Analysis of data
 CO3 - EDA
+CO4 - Visualisation Techniques
+CO5 - Data Science Tools to implement the Analysis
 
 ---
 
@@ -139,7 +141,7 @@ Charts for the data visualization unit, based on **% resistant** (100 minus % su
 
 ---
 
-## Resistance-based dashboard (Streamlit)
+## 8. Resistance-based dashboard (Streamlit)
 
 Run: `python -m streamlit run app.py`
 
