@@ -1,16 +1,16 @@
 # Antibiotic Resistance Trend Predictor 
 
-**Author:** Sariga Joseph Fredy,S Sreya,Shalin Miya Babu
+**Author:** Sariga Joseph Fredy,S Sreya,Shalin Miya Babu,Agila Benedict
 
 **Course:** Data Science, B.Tech Computer Science and Engineering, Mar Baselios College of Engineering and Technology
 
 
 
-**Part covered in this README:** Steps 1 and 2 of structured thinking -Problem Identification and Data Collection  
+**Part covered in this README:** Steps 1 and 2 of structured thinking (Problem Identification and Data Collection), and the data visualization unit
 
-**Course outcome:** 
+**Course outcome:**
 
-CO1 -explain the fundamental concepts in data science
+CO1 - explain the fundamental concepts in data science
 CO2 - Statistical Analysis of data
 CO3 - EDA
 CO4 - Visualisation Techniques
@@ -122,7 +122,9 @@ Charts for the data visualization unit, based on **% resistant** (100 minus % su
 
 | File | What it is |
 |---|---|
+| `docs/data_task_abstraction.md` | Data abstraction, task abstraction, the four levels of validation, and chart families by data type |
 | `docs/visualization_notes.md` | Introduction, dimensions and measures, and notes and findings for each chart |
+| `docs/visualization_workflow.md` | The visualization workflow followed in this project, and how the course's visualization selection rules apply to the charts |
 | `notebooks/amr_visualization.ipynb` | Notebook that draws every chart (Restart and Run All) |
 | `src/viz_utils.py` | Data loading, own treemap layout, own circle packing, tooltip HTML writer |
 | `src/charts.py` | One function per chart |
