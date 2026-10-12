@@ -1,20 +1,18 @@
 # Antibiotic Resistance Trend Predictor 
 
-**Author:** Sariga Joseph Fredy,S Sreya,Shalin Miya Babu,Agila Benedict
+**Author:** Sariga Joseph Fredy,S Sreya
 
 **Course:** Data Science, B.Tech Computer Science and Engineering, Mar Baselios College of Engineering and Technology
 
 
 
-**Part covered in this README:** Steps 1 and 2 of structured thinking (Problem Identification and Data Collection), and the data visualization unit
+**Part covered in this README:** Steps 1 and 2 of structured thinking -Problem Identification and Data Collection  
 
-**Course outcome:**
+**Course outcome:** 
 
-CO1 - explain the fundamental concepts in data science
+CO1 -explain the fundamental concepts in data science
 CO2 - Statistical Analysis of data
 CO3 - EDA
-CO4 - Visualisation Techniques
-CO5 - Data Science Tools to implement the Analysis
 
 ---
 
@@ -122,9 +120,7 @@ Charts for the data visualization unit, based on **% resistant** (100 minus % su
 
 | File | What it is |
 |---|---|
-| `docs/data_task_abstraction.md` | Data abstraction, task abstraction, the four levels of validation, and chart families by data type |
 | `docs/visualization_notes.md` | Introduction, dimensions and measures, and notes and findings for each chart |
-| `docs/visualization_workflow.md` | The visualization workflow followed in this project, and how the course's visualization selection rules apply to the charts |
 | `notebooks/amr_visualization.ipynb` | Notebook that draws every chart (Restart and Run All) |
 | `src/viz_utils.py` | Data loading, own treemap layout, own circle packing, tooltip HTML writer |
 | `src/charts.py` | One function per chart |
@@ -143,12 +139,12 @@ Charts for the data visualization unit, based on **% resistant** (100 minus % su
 
 ---
 
-## 8. Resistance-based dashboard (Streamlit)
+## Resistance-based dashboard (Streamlit)
 
 Run: `python -m streamlit run app.py`
 
 - **Metric:** Resistance (%) = 100 - susceptible (%) (non-susceptible, includes intermediate; see limitation 3).
-- **Pages:** Overview, Antibiotic & Organism Analysis, Trends Over Time, Resistance Prediction & Early Warning, Data Explorer, Comparative Visualizations (includes the full chart gallery), About & Limitations.
-- **Modules:** `src/data_processing.py` (loading, validation, resistance), `src/modeling.py` (trend, forecast, walk-forward validation, early-warning rules), `src/pages.py`, `src/theme.py`, plus the existing `src/charts.py` and `src/viz_utils.py`.
-- **Forecasts:** linear trend per combination, validated chronologically against a naive previous-year baseline; shown only when it is not worse. Early-warning thresholds are adjustable on the Early Warning page.
+- **Pages:** Overview (summary tiles, distribution and yearly resistance trend of observed data) and Comparative Visualizations (interactive comparison plus the full chart gallery).
+- **Modules:** `src/data_processing.py` (loading, validation, resistance), `src/pages.py`, `src/theme.py`, plus `src/charts.py` and `src/viz_utils.py`.
+- **Descriptive only:** the dashboard shows observed resistance. It has no forecasting, machine-learning model, trend labels or risk categories. The only fixed threshold is the "high observed resistance" flag (latest resistance of 70% or more) in the Selected combinations table, set as `HIGH_RESISTANCE` in `src/pages.py`.
 - Research and surveillance support only, not a substitute for clinical judgment.

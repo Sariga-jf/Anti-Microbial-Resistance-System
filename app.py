@@ -22,12 +22,7 @@ except DataError as err:
 
 PAGES = {
     "Overview": pages.overview,
-    "Antibiotic & Organism Analysis": pages.analysis,
-    "Trends Over Time": pages.trends,
-    "Resistance Prediction & Early Warning": pages.early_warning,
-    "Data Explorer": pages.explorer,
     "Comparative Visualizations": pages.compare,
-    "About & Limitations": pages.about,
 }
 ALL_ORGS = sorted(full["organism_short"].unique())
 ALL_ABX = sorted(full["antibiotic"].unique())
